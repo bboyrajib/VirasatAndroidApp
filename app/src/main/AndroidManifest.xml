@@ -17,7 +17,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,17 +29,20 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
             android:noHistory="true"
+            android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".RegisterActivity"
             android:label="Register"
             android:noHistory="true"
+            android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".UserAreaActivity" />
         <activity
             android:name=".ForgotPasswordActivity"
             android:label="Forgot Password?"
             android:noHistory="true"
+            android:screenOrientation="portrait"
             android:parentActivityName=".LoginActivity" />
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
@@ -51,6 +55,7 @@
         <activity
             android:name=".User"
             android:label="@string/title_activity_user"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

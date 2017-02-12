@@ -60,6 +60,7 @@ public class LoginActivity extends AppCompatActivity {
     SharedPreferences prefs;
 
     String NAME="default";
+    TextView signup_main;
 
     CoordinatorLayout coordinatorLayout;
      EditText email,password; TextView ForgotPassword;
@@ -94,6 +95,8 @@ public class LoginActivity extends AppCompatActivity {
         coordinatorLayout=(CoordinatorLayout)findViewById(R.id.coordinatorLayoutlogin);
          email = (EditText) findViewById(R.id.emailLogin);
         password = (EditText) findViewById(R.id.passwordLogin);
+
+        signup_main = (TextView) findViewById(R.id.signup_main);
        // final TextView tvRegisterLink = (TextView) findViewById(R.id.tvRegisterLink);
         final Button bLogin = (Button) findViewById(R.id.email_sign_in_button);
 
@@ -317,6 +320,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        signup_main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            }
+        });
 
     }
 

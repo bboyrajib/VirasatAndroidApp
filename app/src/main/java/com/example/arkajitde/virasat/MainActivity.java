@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     CoordinatorLayout coordinatorLayoutMain;
 
     Button login_main;
-    TextView signup_main;
+
 
     SharedPreferences prefs;
 
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         login_main = (Button) findViewById(R.id.login_main);
-        signup_main = (TextView) findViewById(R.id.signup_main);
+
         coordinatorLayoutMain=(CoordinatorLayout)findViewById(R.id.activity_main);
 
          prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
@@ -74,12 +74,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
-        signup_main.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-            }
-        });
+
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
 
