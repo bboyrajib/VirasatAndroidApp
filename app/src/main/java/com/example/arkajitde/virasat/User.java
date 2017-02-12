@@ -16,11 +16,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class User extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    TextView name,email;
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
     @Override
@@ -29,6 +32,9 @@ public class User extends AppCompatActivity
         setContentView(R.layout.activity_user);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        SharedPreferences.Editor editor=prefs.edit();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -45,11 +51,22 @@ public class User extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        SharedPreferences.Editor editor=prefs.edit();
+
+        navigationView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                navigationView.removeOnLayoutChangeListener(this);
+                name=(TextView)navigationView.findViewById(R.id.userName);
+                email=(TextView)navigationView.findViewById(R.id.userEmail);
+                name.setText(""+prefs.getString("name",null));
+                email.setText(""+prefs.getString("email",null));
+            }
+        });
+
+
     }
 
     boolean doubleBackToExitPressedOnce = false;

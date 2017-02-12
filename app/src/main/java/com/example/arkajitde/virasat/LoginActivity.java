@@ -59,6 +59,8 @@ public class LoginActivity extends AppCompatActivity {
 
     SharedPreferences prefs;
 
+    String NAME="default";
+
     CoordinatorLayout coordinatorLayout;
      EditText email,password; TextView ForgotPassword;
     ProgressDialog progressDialog;
@@ -139,12 +141,16 @@ public class LoginActivity extends AppCompatActivity {
                     try {
                         JSONObject jsonResponse = new JSONObject(response);
                         String success = jsonResponse.getString("success");
+                        NAME=jsonResponse.getString("name");
 
                         if (success.equals("true")) {
                             // String name = jsonResponse.getString("name");
                             //int age = jsonResponse.getInt("age");
-
+                            SharedPreferences.Editor editor=prefs.edit();
+                            editor.putString("name",NAME);
+                            editor.commit();
                             progressDialogDismiss();
+
                             Intent intent = new Intent(LoginActivity.this, User.class);
                             //  intent.putExtra("name", name);
                             //intent.putExtra("age", age);
@@ -231,17 +237,23 @@ public class LoginActivity extends AppCompatActivity {
                             try {
                                 JSONObject jsonResponse = new JSONObject(response);
                                 String success = jsonResponse.getString("success");
+                                NAME=jsonResponse.getString("name");
 
                                 if (success.equals("true")) {
+                                    SharedPreferences.Editor editor=prefs.edit();
                                     // String name = jsonResponse.getString("name");
                                     //int age = jsonResponse.getInt("age");
                                     if (keeplog.isChecked()) {
-                                        SharedPreferences.Editor editor=prefs.edit();
+
                                         editor.putString("email", Email);
                                         editor.putString("pass", Password);
                                         editor.putBoolean("isLoggedIn", true);
+                                        editor.putString("name",NAME);
                                         editor.commit();
                                     }
+                                    editor.putString("email", Email);
+                                    editor.putString("name",NAME);
+                                    editor.commit();
                                     progressDialogDismiss();
                                     Intent intent = new Intent(LoginActivity.this, User.class);
                                     //  intent.putExtra("name", name);
