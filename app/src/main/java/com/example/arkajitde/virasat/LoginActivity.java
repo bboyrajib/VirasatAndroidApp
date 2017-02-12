@@ -145,7 +145,7 @@ public class LoginActivity extends AppCompatActivity {
                             //int age = jsonResponse.getInt("age");
 
                             progressDialogDismiss();
-                            Intent intent = new Intent(LoginActivity.this, UserAreaActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, User.class);
                             //  intent.putExtra("name", name);
                             //intent.putExtra("age", age);
                             //intent.putExtra("username", username);
@@ -243,7 +243,7 @@ public class LoginActivity extends AppCompatActivity {
                                         editor.commit();
                                     }
                                     progressDialogDismiss();
-                                    Intent intent = new Intent(LoginActivity.this, UserAreaActivity.class);
+                                    Intent intent = new Intent(LoginActivity.this, User.class);
                                     //  intent.putExtra("name", name);
                                     //intent.putExtra("age", age);
                                     //intent.putExtra("username", username);
