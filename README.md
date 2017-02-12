@@ -1,2 +1,0 @@
-# VirasatAndroidApp
-VIRASAT Android App
