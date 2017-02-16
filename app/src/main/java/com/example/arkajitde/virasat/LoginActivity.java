@@ -210,10 +210,7 @@ public class LoginActivity extends AppCompatActivity {
             bLogin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    progressDialog=new ProgressDialog(LoginActivity.this);
-                    progressDialog.setTitle("Logging In!");
-                    progressDialog.setMessage("Please wait a moment");
-                    progressDialog.show();
+
 
 
                     final String Email = email.getText().toString();
@@ -232,6 +229,11 @@ public class LoginActivity extends AppCompatActivity {
                         return;
                     }
 
+
+                    progressDialog=new ProgressDialog(LoginActivity.this);
+                    progressDialog.setTitle("Logging In!");
+                    progressDialog.setMessage("Please wait a moment");
+                    progressDialog.show();
 
                     // Response received from the server
                     Response.Listener<String> responseListener = new Response.Listener<String>() {

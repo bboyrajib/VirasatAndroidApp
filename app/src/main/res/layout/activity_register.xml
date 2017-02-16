@@ -7,6 +7,7 @@
     android:paddingTop="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background1st"
     tools:context=".RegisterActivity">
 
 
@@ -158,12 +159,17 @@
         android:id="@+id/textView2" />
 
     <Button
-        android:text="Register"
-        android:layout_width="match_parent"
+        android:background="@drawable/button2"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="125dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
         android:id="@+id/register" />
 </LinearLayout>
     </ScrollView>

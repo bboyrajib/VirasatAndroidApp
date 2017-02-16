@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/cardview_light_background"
+    android:background="@drawable/background1st"
     tools:context="com.example.arkajitde.virasat.MainActivity">
 
     <RelativeLayout
@@ -17,17 +17,15 @@
         android:layout_height="match_parent">
 
         <Button
-            android:text="Explore"
-            android:layout_width="match_parent"
+
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:id="@+id/login_main"
-            android:layout_marginBottom="92dp"
-            android:layout_marginTop="200dp"
-            android:background="@drawable/side_nav_bar"
+            android:layout_marginBottom="27dp"
+            android:background="@drawable/button"
             android:textColor="#ffffff"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
-
-
 
 
     </RelativeLayout>
